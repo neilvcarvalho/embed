@@ -12,7 +12,8 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{An easy way to embed media to your Rails app}
   gem.homepage      = "https://github.com/neilvilela/embed"
 
-  gem.add_development_dependency "rspec"
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rake'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

@@ -1,4 +1,5 @@
 require "embed/version"
+require 'embed_helper'
 
 module Embed
 	def self.youtube_video_id(url)
@@ -9,3 +10,5 @@ module Embed
 		end
 	end
 end
+
+ActionView::Base.send :include, Embed::EmbedHelper

@@ -8,9 +8,11 @@ Gem::Specification.new do |gem|
   gem.version       = Embed::VERSION
   gem.authors       = ["Neil Carvalho"]
   gem.email         = ["me@neil.pro"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{An easy way to embed media to your Rails app}
+  gem.summary       = %q{An easy way to embed media to your Rails app}
+  gem.homepage      = "https://github.com/neilvilela/embed"
+
+  gem.add_development_dependency "rspec"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

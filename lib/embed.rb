@@ -9,6 +9,13 @@ module Embed
 			return $1
 		end
 	end
+	def self.vimeo_video_id(url)
+		if url[/vimeo.com\/([^\?]*)/]
+			return $1
+		end
+	end
 end
 
-ActionView::Base.send :include, Embed::EmbedHelper
+if defined?(ActionView::Base)
+	ActionView::Base.send :include, Embed::EmbedHelper
+end

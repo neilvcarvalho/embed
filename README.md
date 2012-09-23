@@ -22,7 +22,7 @@ Or install it yourself as:
 
 On your view:
 ```ruby
-<%= embed(http://www.youtube.com/watch?v=fwncgZ15RVQ)" %>
+<%= embed("http://www.youtube.com/watch?v=fwncgZ15RVQ") %>
 ```
 
 ## Contributing

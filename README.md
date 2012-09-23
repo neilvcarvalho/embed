@@ -2,7 +2,7 @@
 
 An easy way to embed media to your Rails app. Don't worry about messy embedding HTML anymore, just use the media URL.
 
-As of now, it only supports YouTube and Vimeo.
+As of now, it only supports YouTube, Vimeo and SoundCloud.
 
 ## Installation
 

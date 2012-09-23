@@ -1,6 +1,8 @@
 # Embed
 
-TODO: Write a gem description
+An easy way to embed media to your Rails app. Don't worry about messy embedding HTML anymore, just use the media URL.
+
+Supports YouTube, Vimeo and Soundcloud.
 
 ## Installation
 
@@ -18,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+On your view:
+```ruby
+<%= embed_media("http://www.youtube.com/watch?v=fwncgZ15RVQ") %>
+```
 
 ## Contributing
 

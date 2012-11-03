@@ -9,6 +9,7 @@ module Embed
       return $1
     end
   end
+
   def self.vimeo_video_id(url)
     if url[/vimeo.com\/([^\?]*)/]
       return $1

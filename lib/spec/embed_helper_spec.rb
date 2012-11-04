@@ -7,7 +7,7 @@ include Embed::EmbedHelper
 describe Embed::EmbedHelper do
   let(:youtube_url) { 'http://www.youtube.com/watch?v=u1zgFlCw8Aw' }
   let(:vimeo_url)   { 'http://vimeo.com/49760839' }
-  let(:soundcloud_url) { 'http://soundcloud.com/dj-slink/in-for-the-kill-dj-slinks-gets' }
+  let(:soundcloud_url) { 'http://soundcloud.com/forss/flickermood' }
   let(:wistia_url) { 'http://fast.wistia.com/embed/iframe/2cf8fbb2c0' }
 
   describe '::_youtube_embed(url, 640, 390)' do
@@ -24,7 +24,7 @@ describe Embed::EmbedHelper do
 
   describe '::_soundcloud_embed(url)' do
     it 'returns the embedding html for a SoundCloud URL' do
-      _soundcloud_embed(soundcloud_url).should == %Q{<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F60522748&show_artwork=true"></iframe>}
+      _soundcloud_embed(soundcloud_url).should == %Q{<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" src=\"http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true\"></iframe>}
     end
   end
 
@@ -44,7 +44,7 @@ describe Embed::EmbedHelper do
     end
 
     it 'embeds a SoundCloud audio' do
-      embed(soundcloud_url).should == %Q{<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F60522748&show_artwork=true"></iframe>}
+      embed(soundcloud_url).should == %Q{<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" src=\"http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true\"></iframe>}
     end
   end
 
@@ -63,7 +63,7 @@ describe Embed::EmbedHelper do
     end
 
     it 'embeds a SoundCloud audio' do
-      embed(soundcloud_url).should == %Q{<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F60522748&show_artwork=true"></iframe>}
+      embed(soundcloud_url).should == %Q{<iframe width=\"100%\" height=\"166\" scrolling=\"no\" frameborder=\"no\" src=\"http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true\"></iframe>}
     end
   end
 end

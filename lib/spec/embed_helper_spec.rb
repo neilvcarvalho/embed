@@ -10,27 +10,27 @@ describe Embed::EmbedHelper do
   let(:soundcloud_url) { 'http://soundcloud.com/dj-slink/in-for-the-kill-dj-slinks-gets' }
   let(:wistia_url) { 'http://fast.wistia.com/embed/iframe/2cf8fbb2c0' }
 
-  describe '::youtube_embed(url, 640, 390)' do
+  describe '::_youtube_embed(url, 640, 390)' do
     it 'returns the embedding html for a YouTube URL' do
-      youtube_embed(youtube_url, 640, 390).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0 frameborder="0"/>}
+      _youtube_embed(youtube_url, 640, 390).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0 frameborder="0"/>}
     end
   end
 
-  describe '::vimeo_embed(url, 640, 390)' do
+  describe '::_vimeo_embed(url, 640, 390)' do
     it 'returns the embedding html for a Vimeo URL' do
-      vimeo_embed(vimeo_url, 640, 390).should == %Q{<iframe src="http://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      _vimeo_embed(vimeo_url, 640, 390).should == %Q{<iframe src="http://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
     end
   end
 
-  describe '::soundcloud_embed(url)' do
+  describe '::_soundcloud_embed(url)' do
     it 'returns the embedding html for a SoundCloud URL' do
-      soundcloud_embed(soundcloud_url).should == %Q{<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F60522748&show_artwork=true"></iframe>}
+      _soundcloud_embed(soundcloud_url).should == %Q{<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F60522748&show_artwork=true"></iframe>}
     end
   end
 
-  describe '::wistia_embed(url, 640, 390)' do
+  describe '::_wistia_embed(url, 640, 390)' do
     it 'returns the embedding html for a Wisita URL' do
-      wistia_embed(wistia_url, 640, 390).should == %Q{<iframe src="http://fast.wistia.com/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=360&videoWidth=640" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="390"></iframe>}
+      _wistia_embed(wistia_url, 640, 390).should == %Q{<iframe src="http://fast.wistia.com/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=360&videoWidth=640" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="390"></iframe>}
     end
   end
 

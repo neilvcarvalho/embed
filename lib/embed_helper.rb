@@ -8,7 +8,7 @@ module Embed
   module EmbedHelper
     def _youtube_embed(url, width, height)
       video_id = Embed.youtube_video_id(url)
-      html = %Q{<iframe id="#{video_id}" type="text/html" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{video_id}?autoplay=0" frameborder="0"/>}
+      html = %Q{<iframe id="#{video_id}" type="text/html" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{video_id}?autoplay=0" frameborder="0"></iframe>}
       html.respond_to?(:html_safe) ? html.html_safe : html
     end
 

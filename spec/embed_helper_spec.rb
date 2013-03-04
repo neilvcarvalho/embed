@@ -30,7 +30,7 @@ describe Embed::EmbedHelper do
 
   describe '::_wistia_embed(url, 640, 390)' do
     it 'returns the embedding html for a Wisita URL' do
-      _wistia_embed(wistia_url, 640, 390).should == %Q{<iframe src="http://fast.wistia.com/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=360&videoWidth=640" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="390"></iframe>}
+      _wistia_embed(wistia_url, 640, 390).should == %Q{<iframe src="http://fast.wistia.net/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=390&videoWidth=640" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="640" height="390"></iframe>}
     end
   end
 
@@ -59,7 +59,7 @@ describe Embed::EmbedHelper do
 
     #FIXME: Wistia always return videoHeight=360&videoWidth=640 ??
     it 'embeds a Wistia video with custom sizes' do
-      embed(wistia_url, {:width => 540, :height => 290}).should == %Q{<iframe src="http://fast.wistia.com/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=360&videoWidth=640" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="540" height="290"></iframe>}
+      embed(wistia_url, {:width => 540, :height => 290}).should == %Q{<iframe src="http://fast.wistia.net/embed/iframe/2cf8fbb2c0?version=v1&videoHeight=290&videoWidth=540" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="540" height="290"></iframe>}
     end
 
     it 'embeds a SoundCloud audio' do

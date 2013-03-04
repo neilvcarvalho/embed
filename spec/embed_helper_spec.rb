@@ -12,7 +12,7 @@ describe Embed::EmbedHelper do
 
   describe '::_youtube_embed(url, 640, 390)' do
     it 'returns the embedding html for a YouTube URL' do
-      _youtube_embed(youtube_url, 640, 390).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"/></iframe>}
+      _youtube_embed(youtube_url, 640, 390).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"></iframe>}
     end
   end
 
@@ -36,7 +36,7 @@ describe Embed::EmbedHelper do
 
   describe '::embed(url)' do
     it 'embeds an YouTube video' do
-      embed(youtube_url).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"/></iframe>}
+      embed(youtube_url).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="640" height="390" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"></iframe>}
     end
 
     it 'embeds a Vimeo video' do
@@ -50,7 +50,7 @@ describe Embed::EmbedHelper do
 
   describe '::embed(url, 540, 290)' do
     it 'embeds an YouTube video with custom sizes' do
-      embed(youtube_url, {:width => 540, :height => 290}).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="540" height="290" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"/></iframe>}
+      embed(youtube_url, {:width => 540, :height => 290}).should == %Q{<iframe id="u1zgFlCw8Aw" type="text/html" width="540" height="290" src="http://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0" frameborder="0"></iframe>}
     end
 
     it 'embeds a Vimeo video with custom sizes' do

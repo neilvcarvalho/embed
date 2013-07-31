@@ -45,6 +45,8 @@ module Embed
     end
 
     def embed(url, params = {})
+      return if url.nil? || url.empty?
+
       params[:width] ||= 640
       params[:height] ||= 390
       if url[/(youtube.com|youtu.be)/]

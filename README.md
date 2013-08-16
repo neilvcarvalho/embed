@@ -37,7 +37,7 @@ Can also specify the protocol («http» by default)
 ```
 
 ** Soundcloud always uses https
-** Wistia not allow use https
+** Wistia does not allow using https
 
 
 ## Contributing

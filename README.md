@@ -30,6 +30,16 @@ On your view
 <%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
 ```
 
+Can also specify the protocol («http» by default)
+
+```ruby
+<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => 'https'}) %>
+```
+
+** Soundcloud always uses https
+** Wistia not allow use https
+
+
 ## Contributing
 
 1. Fork it

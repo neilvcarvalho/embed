@@ -8,24 +8,24 @@ module Embed
   module EmbedHelper
     def _youtube_embed(url, width, height)
       video_id = Embed.youtube_video_id(url)
-      html = %Q{<iframe id="#{video_id}" type="text/html" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{video_id}?autoplay=0&rel=0" frameborder="0"></iframe>}
+      html = %Q{<iframe id="#{video_id}" type="text/html" width="#{width}" height="#{height}" src="//www.youtube.com/embed/#{video_id}?autoplay=0&rel=0" frameborder="0"></iframe>}
       html.respond_to?(:html_safe) ? html.html_safe : html
     end
 
     def _vimeo_embed(url, width, height)
       video_id = Embed.vimeo_video_id(url)
-      html = %Q{<iframe src="http://player.vimeo.com/video/#{video_id}" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      html = %Q{<iframe src="//player.vimeo.com/video/#{video_id}" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
       html.respond_to?(:html_safe) ? html.html_safe : html
     end
 
     def _soundcloud_embed(url)
       params = {:format => 'json', :url => url}
-      _oembed('http://soundcloud.com/oembed', url, params)
+      _oembed('//soundcloud.com/oembed', url, params)
     end
 
     def _wistia_embed(url, width, height)
       params = { :format => 'json', :url => url, :width => width, :height => height }
-      _oembed('http://fast.wistia.com/oembed', url, params)
+      _oembed('//fast.wistia.com/oembed', url, params)
     end
 
     def _oembed(oembed_url, url, params)

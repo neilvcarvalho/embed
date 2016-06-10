@@ -20,7 +20,7 @@ module Embed
 
     def _soundcloud_embed(url)
       params = {:format => 'json', :url => url}
-      _oembed('//soundcloud.com/oembed', url, params)
+      _oembed("#{request.protocol}soundcloud.com/oembed", url, params)
     end
 
     def _wistia_embed(url, width, height)

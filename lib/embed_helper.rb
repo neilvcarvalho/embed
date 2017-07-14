@@ -18,6 +18,12 @@ module Embed
       html.respond_to?(:html_safe) ? html.html_safe : html
     end
 
+    def _facebook_embed(url, width, height, protocol)
+      url_with_protocol = "#{protocol}://www.facebook.com/plugins/video.php?href=" + CGI::escape(url.gsub(%r{^\w+://}, "#{protocol}://"))
+      html = %Q{<iframe src="#{url_with_protocol}&width=#{width}" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      html.respond_to?(:html_safe) ? html.html_safe : html
+    end
+
     def _soundcloud_embed(url, protocol)
       params = {:format => 'json', :url => url}
       _oembed("#{protocol}://soundcloud.com/oembed", url, params)
@@ -58,6 +64,8 @@ module Embed
         return _soundcloud_embed(url, params[:protocol])
       elsif url[/wistia.com/]
         return _wistia_embed(url, params[:width], params[:height], params[:protocol])
+      elsif url[/facebook.com/]
+        return _facebook_embed(url, params[:width], params[:height], params[:protocol])
       end
     end
   end

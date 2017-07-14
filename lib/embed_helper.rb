@@ -20,7 +20,7 @@ module Embed
 
     def _facebook_embed(url, width, height, protocol)
       url_with_protocol = "#{protocol}://www.facebook.com/plugins/video.php?href=" + CGI::escape(url.gsub(%r{^\w+://}, "#{protocol}://"))
-      html = %Q{<iframe src="#{url_with_protocol}&width=#{width}" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      html = %Q{<iframe src="#{url_with_protocol}&width=#{width}&show_text=0" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
       html.respond_to?(:html_safe) ? html.html_safe : html
     end
 

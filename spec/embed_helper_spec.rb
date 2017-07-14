@@ -37,7 +37,7 @@ describe Embed::EmbedHelper do
 
   describe '::_facebook_embed(url, 640, 390, http)' do
     it 'returns the embedding html for a facebook' do
-      _facebook_embed(facebook_url, 640, 390, 'http').should == %Q{<iframe src="http://www.facebook.com/plugins/video.php?href=http%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=640" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      _facebook_embed(facebook_url, 640, 390, 'http').should == %Q{<iframe src="http://www.facebook.com/plugins/video.php?href=http%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=640&show_text=0" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
     end
   end
 
@@ -70,7 +70,7 @@ describe Embed::EmbedHelper do
     end
 
     it 'embeds a Facebook video with custom sizes and using https' do
-      embed(facebook_url, {:width => 540, :height => 290, :protocol => 'https'}).should == %Q{<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=540" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
+      embed(facebook_url, {:width => 540, :height => 290, :protocol => 'https'}).should == %Q{<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=540&show_text=0" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>}
     end
 
     #FIXME: Wistia always return videoHeight=360&videoWidth=640 ??

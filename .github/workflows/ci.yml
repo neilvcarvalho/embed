@@ -18,6 +18,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     name: Tests
+    continue-on-error: ${{matrix.ruby == 'head' || matrix.ruby == 'jruby' || matrix.ruby == 'truffleruby''}}
     strategy:
       fail-fast: false
       matrix:
@@ -29,6 +30,9 @@ jobs:
         - "2.6"
         - "2.5"
         - "2.4"
+        - head
+        - jruby
+        - truffleruby
         include:
           - ruby: "3.2"
             coverage: "true"

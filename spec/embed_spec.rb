@@ -1,26 +1,32 @@
-require 'rubygems'
-require 'embed'
-require 'rspec'
-
-include Embed
+require "spec_helper"
 
 describe Embed do
-  describe '::youtube_video_id(url)' do
-    it 'returns the YouTube video id from a full URL' do
-      url = 'http://www.youtube.com/watch?v=dMH0bHeiRNg'
-      Embed.youtube_video_id(url).should == 'dMH0bHeiRNg'
+  describe "::youtube_video_id(url)" do
+    it "returns the YouTube video id from a full URL" do
+      url = "https://www.youtube.com/watch?v=dMH0bHeiRNg"
+      Embed.youtube_video_id(url).should == "dMH0bHeiRNg"
     end
 
-    it 'returns the YouTube video id from a short URL' do
-      url = 'http://youtu.be/dMH0bHeiRNg'
-      Embed.youtube_video_id(url).should == 'dMH0bHeiRNg'
+    it "returns the YouTube video id from a short URL" do
+      url = "https://youtu.be/dMH0bHeiRNg"
+      Embed.youtube_video_id(url).should == "dMH0bHeiRNg"
+    end
+
+    it "returns the YouTube video id from a YT Shorts URL" do
+      url = "https://www.youtube.com/shorts/KZvrP8Mfsyo"
+      Embed.youtube_video_id(url).should == "KZvrP8Mfsyo"
+    end
+
+    it "works with a URL ending with v/" do
+      url = "https://youtu.be/KZvrP8Mfsyv/"
+      Embed.youtube_video_id(url).should == "KZvrP8Mfsyv"
     end
   end
 
-  describe '::vimeo_video_id(url)' do
-    it 'returns the Vimeo video id from its URL' do
-      url = 'http://vimeo.com/49760839'
-      Embed.vimeo_video_id(url).should == '49760839'
+  describe "::vimeo_video_id(url)" do
+    it "returns the Vimeo video id from its URL" do
+      url = "https://vimeo.com/49760839"
+      Embed.vimeo_video_id(url).should == "49760839"
     end
   end
 end

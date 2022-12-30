@@ -20,20 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-On your view 
+On your view
 
 ```ruby
-<%= embed("http://www.youtube.com/watch?v=fwncgZ15RVQ") %>
+<%= embed("https://www.youtube.com/watch?v=fwncgZ15RVQ") %>
 ```
 
 ```ruby
-<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
+<%= embed('https://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
 ```
 
 Can also specify the protocol («http» by default)
 
 ```ruby
-<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => 'https'}) %>
+<%= embed('https://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => 'https'}) %>
 ```
 
 ** Soundcloud always uses https

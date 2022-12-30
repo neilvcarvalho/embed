@@ -18,7 +18,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     name: Tests
-    continue-on-error: ${{matrix.ruby == 'head' || matrix.ruby == 'jruby' || matrix.ruby == 'truffleruby''}}
+    continue-on-error: ${{matrix.ruby == 'head' || matrix.ruby == 'jruby' || matrix.ruby == 'truffleruby'}}
     strategy:
       fail-fast: false
       matrix:

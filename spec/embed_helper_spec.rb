@@ -14,64 +14,64 @@ describe Embed::EmbedHelper do
 
   describe "::_youtube_embed(url, 640, 390)" do
     it "returns the embedding html for a YouTube URL" do
-      subject._youtube_embed(youtube_url, 640, 390).should == %(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="640" height="390" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>)
+      expect(subject._youtube_embed(youtube_url, 640, 390)).to eq(%(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="640" height="390" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>))
     end
   end
 
   describe "::_vimeo_embed(url, 640, 390)" do
     it "returns the embedding html for a Vimeo URL" do
-      subject._vimeo_embed(vimeo_url, 640, 390).should == %(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>)
+      expect(subject._vimeo_embed(vimeo_url, 640, 390)).to eq(%(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>))
     end
   end
 
   describe "::_soundcloud_embed(url)" do
     it "returns the embedding html for a SoundCloud URL" do
-      subject._soundcloud_embed(soundcloud_url).should == %(<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true"></iframe>)
+      expect(subject._soundcloud_embed(soundcloud_url)).to eq(%(<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true"></iframe>))
     end
   end
 
   describe "::_wistia_embed(url, 640, 390)" do
     it "returns the embedding html for a Wisita URL" do
-      subject._wistia_embed(wistia_url, 640, 390).should == %(<iframe src="https://fast.wistia.net/embed/iframe/2cf8fbb2c0" title="Final Launch Video " allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="640" height="390"></iframe>\n<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>)
+      expect(subject._wistia_embed(wistia_url, 640, 390)).to eq(%(<iframe src="https://fast.wistia.net/embed/iframe/2cf8fbb2c0" title="Final Launch Video " allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="640" height="390"></iframe>\n<script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>))
     end
   end
 
   describe "::_facebook_embed(url, 640, 390)" do
     it "returns the embedding html for a facebook" do
-      subject._facebook_embed(facebook_url, 640, 390).should == %(<iframe id="facebook-c097b5fbd0087379ded7aa83847d91a120608e0a" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=640&show_text=0" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>)
+      expect(subject._facebook_embed(facebook_url, 640, 390)).to eq(%(<iframe id="facebook-c097b5fbd0087379ded7aa83847d91a120608e0a" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=640&show_text=0" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>))
     end
   end
 
   describe "::embed(url)" do
     it "embeds an YouTube video" do
-      subject.embed(youtube_url).should == %(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="640" height="390" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>)
+      expect(subject.embed(youtube_url)).to eq(%(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="640" height="390" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>))
     end
 
     it "embeds a Vimeo video" do
-      subject.embed(vimeo_url).should == %(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>)
+      expect(subject.embed(vimeo_url)).to eq(%(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="640" height="390" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>))
     end
 
     it "embeds a SoundCloud audio" do
-      subject.embed(soundcloud_url).should == %(<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true"></iframe>)
+      expect(subject.embed(soundcloud_url)).to eq(%(<iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F293&show_artwork=true"></iframe>))
     end
   end
 
-  describe "::embed(url, 540, 290)" do
+  describe "::embed(url, {width: 540, height: 290})" do
     it "embeds an YouTube video with custom sizes" do
-      subject.embed(youtube_url, {width: 540, height: 290}).should == %(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="540" height="290" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>)
+      expect(subject.embed(youtube_url, {width: 540, height: 290})).to eq(%(<iframe id="youtube-u1zgFlCw8Aw" src="https://www.youtube.com/embed/u1zgFlCw8Aw?autoplay=0&rel=0" type="text/html" width="540" height="290" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>))
     end
 
     it "embeds a Vimeo video with custom sizes" do
-      subject.embed(vimeo_url, {width: 540, height: 290}).should == %(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>)
+      expect(subject.embed(vimeo_url, {width: 540, height: 290})).to eq(%(<iframe id=\"vimeo-49760839\" src="https://player.vimeo.com/video/49760839" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>))
     end
 
     it "embeds a Facebook video with custom size" do
-      subject.embed(facebook_url, {width: 540, height: 290}).should == %(<iframe id="facebook-c097b5fbd0087379ded7aa83847d91a120608e0a" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=540&show_text=0" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>)
+      expect(subject.embed(facebook_url, {width: 540, height: 290})).to eq(%(<iframe id="facebook-c097b5fbd0087379ded7aa83847d91a120608e0a" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FFacebook360%2Fvideos%2F1681464425405359%2F&width=540&show_text=0" width="540" height="290" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>))
     end
 
     it "do nothing when no url" do
-      subject.embed(nil).should.nil?
-      subject.embed("").should.nil?
+      expect(subject.embed(nil)).to be_nil
+      expect(subject.embed("")).to be_nil
     end
   end
 end

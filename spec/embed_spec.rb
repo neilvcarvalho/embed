@@ -2,31 +2,21 @@ require "spec_helper"
 
 describe Embed do
   describe "::youtube_video_id(url)" do
-    it "returns the YouTube video id from a full URL" do
-      url = "https://www.youtube.com/watch?v=dMH0bHeiRNg"
-      Embed.youtube_video_id(url).should == "dMH0bHeiRNg"
-    end
-
-    it "returns the YouTube video id from a short URL" do
-      url = "https://youtu.be/dMH0bHeiRNg"
-      Embed.youtube_video_id(url).should == "dMH0bHeiRNg"
-    end
-
-    it "returns the YouTube video id from a YT Shorts URL" do
-      url = "https://www.youtube.com/shorts/KZvrP8Mfsyo"
-      Embed.youtube_video_id(url).should == "KZvrP8Mfsyo"
-    end
-
-    it "works with a URL ending with v/" do
-      url = "https://youtu.be/KZvrP8Mfsyv/"
-      Embed.youtube_video_id(url).should == "KZvrP8Mfsyv"
+    {
+      "full URL" => ["https://www.youtube.com/watch?v=dMH0bHeiRNg", "dMH0bHeiRNg"],
+      "short URL" => ["https://youtu.be/dMH0bHeiRNg", "dMH0bHeiRNg"],
+      "YT Shorts URL" => ["https://www.youtube.com/shorts/KZvrP8Mfsyo", "KZvrP8Mfsyo"],
+      "URL ending with v/" => ["https://youtu.be/KZvrP8Mfsyv/", "KZvrP8Mfsyv"],
+    }.each do |description, (url, id)|
+      it "returns the YouTube video id from a #{description}" do
+        expect(Embed.youtube_video_id(url)).to eq(id)
+      end
     end
   end
 
   describe "::vimeo_video_id(url)" do
     it "returns the Vimeo video id from its URL" do
-      url = "https://vimeo.com/49760839"
-      Embed.vimeo_video_id(url).should == "49760839"
+      expect(Embed.vimeo_video_id("https://vimeo.com/49760839")).to eq("49760839")
     end
   end
 end

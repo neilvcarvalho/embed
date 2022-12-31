@@ -58,23 +58,25 @@ describe Embed::EmbedHelper do
 
   describe "::embed(url, 'http')" do
     it "warns about the deprecation of the protocol option" do
-      original_stderr = $stderr
-      $stderr = Class.new do
-        attr_accessor :messages
+      begin
+        original_stderr = $stderr
+        $stderr = Class.new do
+          attr_accessor :messages
 
-        def initialize
-          @messages = []
-        end
+          def initialize
+            @messages = []
+          end
 
-        def write(message)
-          messages << message
-        end
-      end.new
+          def write(message)
+            messages << message
+          end
+        end.new
 
-      subject.embed(youtube_url, {protocol: "http"})
-      expect($stderr.messages.first).to match(/Embed\.video_url\(url, protocol\) is deprecated/)
-    ensure
-      $stderr = original_stderr
+        subject.embed(youtube_url, {protocol: "http"})
+        expect($stderr.messages.first).to match(/Embed\.video_url\(url, protocol\) is deprecated/)
+      ensure
+        $stderr = original_stderr
+      end
     end
 
     it "embeds an YouTube video" do

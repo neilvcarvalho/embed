@@ -2,7 +2,7 @@
 
 An easy way to embed media to your Rails app. Don't worry about messy embedding HTML anymore, just use the media URL.
 
-As of now, it only supports YouTube, Vimeo, Wistia and SoundCloud.
+As of now it supports YouTube, Vimeo, Wistia and SoundCloud.
 
 ## Installation
 
@@ -12,7 +12,7 @@ Add this line to your application's Gemfile:
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -20,25 +20,22 @@ Or install it yourself as:
 
 ## Usage
 
-On your view 
+On your view
 
 ```ruby
-<%= embed("http://www.youtube.com/watch?v=fwncgZ15RVQ") %>
+<%= embed("https://www.youtube.com/watch?v=fwncgZ15RVQ") %>
 ```
 
 ```ruby
-<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
+<%= embed('https://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
 ```
 
-Can also specify the protocol («http» by default)
+#### Deprecated
+You can force `http` if you'd like, although most sites now redirect to `https`.  This will be removed in the future and defaulted to `https` everywhere.
 
 ```ruby
-<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => 'https'}) %>
+<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => "http"}) %>
 ```
-
-** Soundcloud always uses https
-** Wistia does not allow using https
-
 
 ## Contributing
 

@@ -30,6 +30,12 @@ On your view
 <%= embed('https://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290}) %>
 ```
 
+#### Deprecated
+You can force `http` if you'd like, although most sites now redirect to `https`.  This will be removed in the future and defaulted to `https` everywhere.
+
+```ruby
+<%= embed('http://www.youtube.com/watch?v=fwncgZ15RVQ', {:width => 540, :height => 290, :protocol => "http"}) %>
+```
 
 ## Contributing
 

@@ -18,16 +18,21 @@ module Embed
     end
   end
 
-  def self.video_url(url = "https")
+  def self.video_url(url, protocol = nil)
+    if protocol
+      warn "Embed.video_url(url, protocol) is deprecated and a future release will only use \"https\"."
+    end
+    protocol ||= "https"
+
     case Embed.video_site(url)
     when :youtube
       video_id = Embed.youtube_video_id(url)
-      "https://www.youtube.com/embed/#{video_id}"
+      "#{protocol}://www.youtube.com/embed/#{video_id}"
     when :vimeo
       video_id = Embed.vimeo_video_id(url)
-      "https://player.vimeo.com/video/#{video_id}"
+      "#{protocol}://player.vimeo.com/video/#{video_id}"
     when :facebook
-      "https://www.facebook.com/plugins/video.php?href=" + URI.encode_www_form_component(url)
+      "#{protocol}://www.facebook.com/plugins/video.php?href=" + URI.encode_www_form_component(url)
     else
       url
     end
